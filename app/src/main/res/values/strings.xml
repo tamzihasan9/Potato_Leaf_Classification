@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Potato Leaf</string>
+    <string name="edittextname">Enter Email </string>
+    <string name="edittextname2">Enter Password</string>
+    <string name="signin">Sign In</string>
+    <string name="accountauth">Don\'t have an Account ?</string>
+    <string name="signupname">Signup</string>
+    <string name="signintextview">Sign In</string>
+    <string name="open_nav">Open Navigation Drawer</string>
+    <string name="close_nav">close Navigation Drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+</resources>

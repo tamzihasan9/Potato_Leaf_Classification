@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:backgroundTint="#063970"
+    android:gravity="center"
+
+
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="498dp"
+        android:layout_height="616dp"
+        android:layout_marginTop="30dp"
+        android:background="#F3EEEE"
+        android:backgroundTint="#063970"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="60dp"
+
+        tools:ignore="ExtraText">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="60dp"
+            android:fontFamily="@font/audiowide"
+            android:text="@string/signintextview"
+            android:textSize="40sp"
+            android:textStyle="italic" />
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signinemailid"
+            android:layout_gravity="center"
+            android:inputType="textEmailAddress"
+            android:hint="Enter email"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/signinpassid"
+            android:layout_gravity="center"
+            android:inputType="textEmailAddress"
+            android:hint="Enter Password"
+            />
+
+
+        <Button
+
+            android:id="@+id/signIn"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:backgroundTint="#2481ce"
+            android:fontFamily="@font/audiowide"
+            android:text="@string/signin"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="20sp"
+            android:textStyle="italic" />
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/audiowide"
+                android:text="@string/accountauth"
+                android:textColor="@color/black"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <TextView
+                android:id="@+id/gotoSignupId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/audiowide"
+                android:text="@string/signupname"
+                android:textColor="#097969"
+                android:textSize="16sp">
+
+            </TextView>
+
+            <ProgressBar
+                android:id="@+id/progressbarid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:visibility="gone" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
