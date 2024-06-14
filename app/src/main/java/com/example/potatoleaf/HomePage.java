@@ -1,5 +1,6 @@
 package com.example.potatoleaf;
 
+import static android.app.ProgressDialog.show;
 import static android.widget.Toast.*;
 
 import static com.example.potatoleaf.R.id.textviewid;
@@ -14,11 +15,13 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -35,9 +38,10 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     private CardView R_cardview, D_cardview, M_cardview, U_cardview;
 
     DrawerLayout drawerLayout;
-   // public ActionBarDrawerToggle actionBarDrawerToggle;
+   public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     MaterialToolbar toolbar;
+
     SharedPreferences sharedPreferences ;
     private FirebaseAuth mAuth;
     private DatabaseReference mDatabase;
@@ -53,7 +57,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         M_cardview = findViewById(R.id.mapId);
         U_cardview = findViewById(R.id.uploadId);
         drawerLayout = findViewById(R.id.drawerid);
-        navigationView = findViewById(R.id.navview_id);
+        navigationView = findViewById(R.id.navview);
         toolbar = findViewById(R.id.toolID);
 
 
@@ -63,79 +67,79 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         U_cardview.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
+        mAuth = FirebaseAuth.getInstance();
+        sharedPreferences = this.getSharedPreferences("pass", Context.MODE_PRIVATE);
 
-
-
-//
-//        ratingbar = (RatingBar) findViewById(R.id.ratingbarid);
-//        textview = (TextView) findViewById(textviewid);
 
        setSupportActionBar(toolbar);
-        // Getting the header view
-        View headerView = navigationView.getHeaderView(0);
 
-       ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_nav,R.id.close);
+       View headerView = navigationView.getHeaderView(0);
+
+       ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.open_nav,R.string.close_nav);
        drawerLayout.addDrawerListener(toggle);
        toggle.syncState();
 
-        navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                int id = item.getItemId();
-                if(id==R.id.navi_logout){
-                 //   if(drawerLayout.isDrawerOpen(GravityCompat.START)){
-                   //     drawerLayout.closeDrawer(GravityCompat.START);
-                    //}
-                }
+       navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+           @Override
+           public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+               int id = item.getItemId();
 
-                if(id==R.id.navi_Ratings){
-                    loadFragment(new Rate_us_Fragment());
-                    makeText(getApplicationContext(),"OPEN", LENGTH_LONG).show();
-                }
-                if(id==R.id. navi_profile){
 
-                    makeText(getApplicationContext(),"OPEN", LENGTH_LONG).show();
-                }
-                if(id==R.id.navi_video){
 
-                }
-                drawerLayout.close(GravityCompat.START);
-                return true;
-            }
+                   if(id==R.id.navi_Ratings){
+                   Intent intent = new Intent(getApplicationContext(),Rate_us.class);
+                   startActivity(intent);
 
-            private void loadFragment(Fragment fragment) {
-                FragmentManager fm = getSupportFragmentManager();
-                FragmentTransaction ft = fm.beginTransaction();
-                ft.add(R.id.CONtainerid,fragment);
-                ft.commit();
 
-            }
-        });
+                   }   if(id==R.id.navi_video) {
+                   Intent intent = new Intent(getApplicationContext(), Video.class);
+                   startActivity(intent);
+               }  if(id==R.id.navi_profile) {
+                   Intent intent = new Intent(getApplicationContext(),profile.class);
+                   startActivity(intent);
+
+               }  if(id==R.id.navi_logout) {
+                   SharedPreferences.Editor editor = sharedPreferences.edit();
+                   editor.putBoolean("savepass", false);
+                   editor.apply();
+
+                   mAuth.signOut();
+                   startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                   finish();
+                   Toast.makeText(HomePage.this,"Sign Out", Toast.LENGTH_SHORT).show();
+               }
+
+               if (id==R.id.navi_DIS) {
+                   Intent intent = new Intent(getApplicationContext(),disease.class);
+                   startActivity(intent);
+
+
+
+               }
+
+                   return false;
+               }
+
+       });
 
 
          toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                drawerLayout.open();
+
+                drawerLayout.openDrawer(GravityCompat.START);
             }
         });
 
-//        ratingbar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
-//            @Override
-//            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-//                textview.setText("Our Rating Is :" + rating);
-//            }
-//        });
-
 
     }
 
 
 
 
-    private void setSupportActionBar(Toolbar toolbar) {
 
-    }
+
+
 
 
     @Override

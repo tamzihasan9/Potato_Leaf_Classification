@@ -24,6 +24,11 @@
             android:icon="@drawable/rating"
             android:title="Rate Us"/>
 
+        <item
+            android:id="@+id/navi_DIS"
+            android:icon="@drawable/virus"
+            android:title="Animation"/>
+
     </group>
     <item
 

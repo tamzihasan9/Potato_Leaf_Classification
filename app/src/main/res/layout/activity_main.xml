@@ -8,12 +8,13 @@
     android:gravity="center"
 
 
+
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="498dp"
-        android:layout_height="616dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="800dp"
+
         android:background="#F3EEEE"
         android:backgroundTint="#063970"
         android:gravity="center"
@@ -26,9 +27,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="60dp"
+            android:layout_margin="100dp"
             android:fontFamily="@font/audiowide"
             android:text="@string/signintextview"
+            android:textColor="#F3EEEE"
             android:textSize="40sp"
             android:textStyle="italic" />
 
@@ -41,9 +43,11 @@
             android:layout_gravity="center"
             android:inputType="textEmailAddress"
             android:hint="Enter email"
+            android:layout_marginLeft="10dp"
             />
 
         <EditText
+            android:layout_marginLeft="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/signinpassid"
@@ -52,20 +56,37 @@
             android:hint="Enter Password"
             />
 
+        <CheckBox
+            android:layout_marginLeft="10dp"
+            android:id="@+id/checkid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:buttonTint="@color/black"
+            android:text="Save password"
+            android:textColor="@color/black" />
+
 
         <Button
 
             android:id="@+id/signIn"
-            android:layout_width="200dp"
+            android:layout_width="220dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="40dp"
             android:backgroundTint="#2481ce"
             android:fontFamily="@font/audiowide"
             android:text="@string/signin"
+            android:textColor="#F3EEEE"
             android:textAlignment="center"
             android:textAllCaps="false"
             android:textSize="20sp"
             android:textStyle="italic" />
+        <ProgressBar
+
+            android:id="@+id/progressbarid"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
 
 
         <LinearLayout
@@ -85,22 +106,18 @@
             </TextView>
 
             <TextView
+                android:layout_marginLeft="10dp"
                 android:id="@+id/gotoSignupId"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/audiowide"
                 android:text="@string/signupname"
-                android:textColor="#097969"
+                android:textColor="#ff23729a"
                 android:textSize="16sp">
 
             </TextView>
 
-            <ProgressBar
-                android:id="@+id/progressbarid"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:visibility="gone" />
+
 
         </LinearLayout>
 

@@ -16,7 +16,35 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/white"
+            style="@style/Widget.MaterialComponents.AppBarLayout.PrimarySurface"
+            android:fitsSystemWindows="true">
 
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolID"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:title="Home"
+                app:navigationIcon="@drawable/menu"
+                style="@style/Widget.MaterialComponents.Toolbar.PrimarySurface"
+                android:background="#2196F3"
+                android:elevation="0dp" />
+
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/CONtainerid"
+
+            >
+
+        </FrameLayout>
 
 
 
@@ -279,12 +307,12 @@
 
 
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/navview"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         app:headerLayout="@layout/nav_header"
         app:menu="@menu/nav_menu"
         android:layout_gravity="start"
-        android:id="@+id/navview_id"
         />
 </androidx.drawerlayout.widget.DrawerLayout>
 
