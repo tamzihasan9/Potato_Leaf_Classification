@@ -257,7 +257,7 @@ public class SignUp extends AppCompatActivity implements View.OnClickListener {
                     public void onComplete(@NonNull Task<AuthResult> task) {
 
 
-//
+
 
                         if(task.isSuccessful()){
 
