@@ -115,7 +115,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                }
 
                if (id==R.id.navi_sFB) {
-                   Intent intent = new Intent(getApplicationContext(),SocialMedia.class);
+                   Intent intent = new Intent(getApplicationContext(),Review_activity.class);
                    startActivity(intent);
 
 
