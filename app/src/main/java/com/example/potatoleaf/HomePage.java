@@ -95,10 +95,15 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                    Intent intent = new Intent(getApplicationContext(), Video.class);
                    startActivity(intent);
                }  if(id==R.id.navi_profile) {
-                   Intent intent = new Intent(getApplicationContext(),profile.class);
+                   Intent intent = new Intent(getApplicationContext(), profile.class);
                    startActivity(intent);
 
-               }  if(id==R.id.navi_logout) {
+               } if(id==R.id.navi_Ratings){
+                       Intent intent = new Intent(getApplicationContext(),Rate_us.class);
+                       startActivity(intent);
+
+               }
+                   if(id==R.id.navi_logout) {
                    SharedPreferences.Editor editor = sharedPreferences.edit();
                    editor.putBoolean("savepass", false);
                    editor.apply();
@@ -109,8 +114,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                    Toast.makeText(HomePage.this,"Sign Out", Toast.LENGTH_SHORT).show();
                }
 
-               if (id==R.id.navi_DIS) {
-                   Intent intent = new Intent(getApplicationContext(),disease.class);
+               if (id==R.id.navi_sFB) {
+                   Intent intent = new Intent(getApplicationContext(),SocialMedia.class);
                    startActivity(intent);
 
 

@@ -9,6 +9,10 @@
             android:id="@+id/navi_profile"
             android:icon="@drawable/profile_3135715"
             android:title="Profile"/>
+        <item
+            android:id="@+id/navi_sFB"
+            android:icon="@drawable/profile_3135715"
+            android:title="Social Media"/>
 
         <item
             android:id="@+id/navi_video"
