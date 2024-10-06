@@ -21,6 +21,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
    public ActionBarDrawerToggle actionBarDrawerToggle;
     NavigationView navigationView;
     MaterialToolbar toolbar;
+    private WebView webView;
 
     SharedPreferences sharedPreferences ;
     private FirebaseAuth mAuth;
@@ -51,6 +53,9 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+        webView = findViewById(R.id.webViews);
+        webView.getSettings().setJavaScriptEnabled(true);
+        webView.loadUrl("file:///android_asset/index.html");
 
         R_cardview = findViewById(R.id.LeavesId);
         D_cardview = findViewById(R.id.detectId);
@@ -100,11 +105,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                    Intent intent = new Intent(getApplicationContext(), profile.class);
                    startActivity(intent);
 
-               } if(id==R.id.navi_DIS){
-                       Intent intent = new Intent(getApplicationContext(), disease.class);
-                       startActivity(intent);
+              }
 
-               }
                    if(id==R.id.navi_logout) {
                    SharedPreferences.Editor editor = sharedPreferences.edit();
                    editor.putBoolean("savepass", false);
@@ -116,12 +118,6 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                    Toast.makeText(HomePage.this,"Sign Out", Toast.LENGTH_SHORT).show();
                }
 
-               if (id==R.id.navi_sFB) {
-                   Intent intent = new Intent(getApplicationContext(),Review_activity.class);
-                   startActivity(intent);
-
-
-               }
 
                    return false;
                }

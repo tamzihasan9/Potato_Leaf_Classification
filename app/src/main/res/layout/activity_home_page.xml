@@ -10,12 +10,11 @@
     android:id="@+id/drawerid"
     tools:context=".HomePage">
 
-
-
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fitsSystemWindows="true">
+
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -34,53 +33,43 @@
                 android:background="#2196F3"
                 android:elevation="0dp" />
 
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/CONtainerid"
-
-            >
+            android:id="@+id/CONtainerid">
 
         </FrameLayout>
-
-
-
-
 
         <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             tools:ignore="ScrollViewSize">
-            <!--            <WebView-->
-            <!--                android:id="@+id/webViews"-->
-            <!--                app:layout_constraintStart_toStartOf="parent"-->
-            <!--                app:layout_constraintTop_toTopOf="parent"-->
-            <!--                app:layout_constraintEnd_toEndOf="parent"-->
-            <!--                android:layout_width="400dp"-->
-            <!--                android:layout_marginRight="40dp"-->
-            <!--                android:layout_height="250dp"-->
-            <!--                android:layout_marginTop="30dp"-->
-            <!--                android:layout_marginBottom="30dp"-->
-            <!--                tools:ignore="WebViewLayout">-->
-            <!--            </WebView>-->
 
+            <!-- WebView at the top of the screen -->
+            <WebView
+                android:id="@+id/webViews"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="?attr/actionBarSize"
+                tools:ignore="WebViewLayout" />
 
+            <!-- ScrollView below WebView -->
             <ScrollView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="?attr/actionBarSize">
-
+                android:layout_below="@id/webViews"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#ffcccc">
 
                 <GridLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:columnCount="2"
-                    android:rowCount="3"
-                    android:layout_marginTop="?attr/actionBarSize">
+                    android:rowCount="3">
 
                     <!-- Card 1: Leaves -->
                     <androidx.cardview.widget.CardView
@@ -92,7 +81,8 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -132,7 +122,8 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -167,7 +158,9 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0"
+                        >
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -202,7 +195,8 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -237,7 +231,8 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -272,7 +267,8 @@
                         android:clickable="true"
                         android:foreground="?android:attr/selectableItemBackground"
                         app:cardCornerRadius="8dp"
-                        app:cardElevation="8dp">
+                        app:cardElevation="8dp"
+                        app:cardBackgroundColor="#FFFFF0">
 
                         <LinearLayout
                             android:layout_width="wrap_content"
@@ -283,8 +279,8 @@
                             <ImageView
                                 android:layout_width="80dp"
                                 android:layout_height="80dp"
-                                android:layout_gravity="center_horizontal"
-                                android:src="@drawable/others" />
+                                android:layout_gravity="center"
+                                />
 
                             <TextView
                                 android:layout_width="wrap_content"
@@ -302,57 +298,16 @@
 
         </RelativeLayout>
 
-
-
-
-
-
-
-
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
-
-    <!--    <LinearLayout-->
-    <!--        android:id="@+id/ratingLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="65dp"-->
-    <!--        android:layout_marginTop="80dp"-->
-    <!--        android:gravity="center"-->
-    <!--        android:orientation="vertical"-->
-    <!--        app:layout_constraintEnd_toEndOf="parent">-->
-
-    <!--        <RatingBar-->
-    <!--            android:id="@+id/ratingbarid"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center_horizontal"-->
-    <!--            android:numStars="5"-->
-    <!--            android:progressBackgroundTint="#79154c"-->
-    <!--            android:progressTint="#1a7915"-->
-    <!--            android:rating="3"-->
-    <!--            android:stepSize="0.5" />-->
-
-    <!--        <TextView-->
-
-    <!--            android:id="@+id/textviewid"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_gravity="center_horizontal"-->
-    <!--            android:textSize="20sp" />-->
-
-
-    <!--    </LinearLayout>-->
-
-
+    <!-- Navigation drawer view -->
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/navview"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:headerLayout="@layout/nav_header"
-        app:menu="@menu/nav_menu"
         android:layout_gravity="start"
-        />
+        android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu" />
+
 </androidx.drawerlayout.widget.DrawerLayout>
-
-
-
