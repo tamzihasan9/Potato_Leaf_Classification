@@ -35,7 +35,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView R_cardview, D_cardview, M_cardview, U_cardview;
+    private CardView R_cardview, D_cardview, M_cardview, U_cardview,S_cardview;
 
     DrawerLayout drawerLayout;
    public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -56,6 +56,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         D_cardview = findViewById(R.id.detectId);
         M_cardview = findViewById(R.id.mapId);
         U_cardview = findViewById(R.id.uploadId);
+        S_cardview = findViewById(R.id.sass_id);
         drawerLayout = findViewById(R.id.drawerid);
         navigationView = findViewById(R.id.navview);
         toolbar = findViewById(R.id.toolID);
@@ -65,6 +66,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         D_cardview.setOnClickListener(this);
         M_cardview.setOnClickListener(this);
         U_cardview.setOnClickListener(this);
+        S_cardview.setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
@@ -98,8 +100,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                    Intent intent = new Intent(getApplicationContext(), profile.class);
                    startActivity(intent);
 
-               } if(id==R.id.navi_Ratings){
-                       Intent intent = new Intent(getApplicationContext(),Rate_us.class);
+               } if(id==R.id.navi_DIS){
+                       Intent intent = new Intent(getApplicationContext(), disease.class);
                        startActivity(intent);
 
                }
@@ -117,7 +119,6 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
                if (id==R.id.navi_sFB) {
                    Intent intent = new Intent(getApplicationContext(),Review_activity.class);
                    startActivity(intent);
-
 
 
                }
@@ -169,6 +170,11 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             Intent intent = new Intent(HomePage.this, Upload_activity.class);
             startActivity(intent);
 
+
+        }
+        else if (v.getId() == R.id.sass_id) {
+            Intent intent = new Intent(HomePage.this, Sass_Applicaion.class);
+            startActivity(intent);
 
         }
 

@@ -17,8 +17,12 @@
         android:theme="@style/Theme.PotatoLeaf"
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
-
-
+        <activity
+            android:name=".Sass_Applicaion"
+            android:exported="false" />
+        <activity
+            android:name=".saas_application"
+            android:exported="false" />
         <activity
             android:name=".Single_post_comment"
             android:exported="false" />
@@ -28,7 +32,6 @@
         <activity
             android:name=".PostcComments_adapter"
             android:exported="false" />
-
         <activity
             android:name=".activity_rv_post_card"
             android:exported="false" />
