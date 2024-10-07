@@ -187,7 +187,7 @@
 
                     <!-- Card 4: Upload -->
                     <androidx.cardview.widget.CardView
-                        android:id="@+id/uploadId"
+                        android:id="@+id/paginationId"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="fill"
@@ -213,7 +213,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Upload"
+                                android:text="Pagination"
                                 android:textAlignment="center"
                                 android:textSize="20sp"
                                 android:textStyle="bold"
@@ -285,7 +285,7 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Others"
+                                android:text="GraphQL"
                                 android:textAlignment="center"
                                 android:textSize="20sp"
                                 android:textStyle="bold"

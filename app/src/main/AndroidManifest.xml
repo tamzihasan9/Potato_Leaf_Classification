@@ -18,6 +18,18 @@
         tools:ignore="DataExtractionRules"
         tools:targetApi="31">
         <activity
+            android:name=".graphql"
+            android:exported="false" />
+        <activity
+            android:name=".Pagination"
+            android:exported="false" />
+        <activity
+            android:name=".pagination"
+            android:exported="false" />
+        <activity
+            android:name=".UserHistoryDetails"
+            android:exported="false" />
+        <activity
             android:name=".Sass_Applicaion"
             android:exported="false" />
         <activity
@@ -31,9 +43,6 @@
             android:exported="false" />
         <activity
             android:name=".PostcComments_adapter"
-            android:exported="false" />
-        <activity
-            android:name=".activity_rv_post_card"
             android:exported="false" />
         <activity
             android:name=".All_post_model"
