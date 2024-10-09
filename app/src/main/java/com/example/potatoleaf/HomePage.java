@@ -27,7 +27,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView R_cardview, D_cardview, M_cardview, U_cardview,S_cardview,P_cardview,G_cardview;
+    private CardView R_cardview, D_cardview, M_cardview, U_cardview,S_cardview,P_cardview,G_cardview,c_cardview;
 
     DrawerLayout drawerLayout;
    public ActionBarDrawerToggle actionBarDrawerToggle;
@@ -47,7 +47,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         webView = findViewById(R.id.webViews);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("file:///android_asset/index.html");
-
+        c_cardview=findViewById(R.id.report);
         R_cardview = findViewById(R.id.LeavesId);
         D_cardview = findViewById(R.id.detectId);
         M_cardview = findViewById(R.id.mapId);
@@ -58,7 +58,7 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         navigationView = findViewById(R.id.navview);
         toolbar = findViewById(R.id.toolID);
         G_cardview=findViewById(R.id.newww);
-
+         c_cardview.setOnClickListener(this);
         G_cardview.setOnClickListener(this);
         R_cardview.setOnClickListener(this);
         D_cardview.setOnClickListener(this);
@@ -168,6 +168,11 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         }
         else if (v.getId() == R.id.newww) {
             Intent intent = new Intent(HomePage.this, graphql.class);
+            startActivity(intent);
+
+        }
+        else if (v.getId() == R.id.report) {
+            Intent intent = new Intent(HomePage.this, crystal_report.class);
             startActivity(intent);
 
         }

@@ -60,5 +60,9 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("androidx.recyclerview:recyclerview:1.2.1")
 
+    // iText PDF for generating PDF
+    implementation ("com.itextpdf:itext7-core:7.1.10")
+    //// volley for connecting server
+    implementation ("com.android.volley:volley:1.2.1")
 
 }
